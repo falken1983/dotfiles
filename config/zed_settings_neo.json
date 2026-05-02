@@ -1,0 +1,230 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "project_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "auto_update": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "restore_on_startup": "empty_tab",
+
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "available_models": [
+        {
+          "name": "gemma4:e2b_it_qat",
+          "display_name": "Gemma4:E2B",
+          "max_tokens": 16384,
+          "keep_alive": 0,
+          "supports_tools": true,
+          "supports_thinking": true,
+        },
+      ],
+    },
+    "openai_compatible": {
+      "Mac_Mini_VPN": {
+        "api_url": "http://hal-vpn:11434/v1",
+        "available_models": [
+          {
+            "name": "gemma4:26b",
+            "display_name": "Gemma4:26B hal-m4 Tailscale",
+            "max_tokens": 32768,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+      "Mac_Mini_Local": {
+        "api_url": "http://hal-m4.local:11434/v1",
+        "available_models": [
+          {
+            "name": "gemma4:26b",
+            "display_name": "Gemma4:26B hal-m4 local",
+            "max_tokens": 32768,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+    },
+  },
+  "context_servers": {
+    "mcp-server-github": {
+      "enabled": true,
+      "remote": false,
+      "settings": {},
+    },
+  },
+  "edit_predictions": {
+    "ollama": {
+      "prompt_format": "code_gemma",
+      "model": "gemma4:e2b_it_qat"
+    },
+    "provider": "ollama",
+  },
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+    "gemini": {
+      "favorite_models": ["auto-gemini-3", "gemini-3-flash-preview"],
+      "type": "registry",
+    },
+  },
+  "agent": {
+    "dock": "left",
+    "profiles": {
+      "write": {
+        "name": "write",
+        "tools": {
+          "diagnostics": true,
+          "delete_path": true,
+          "copy_path": true,
+          "grep": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      },
+      "local-ai": {
+        "default_model": {
+          "provider": "ollama",
+          "model": "gemma4:e2b_it_qat",
+          "enable_thinking": true
+        },
+        "name": "LocalAI",
+        "tools": {
+          "spawn_agent": true,
+          "restore_file_from_disk": true,
+          "diagnostics": true,
+          "update_plan": true,
+          "terminal": true,
+          "now": true,
+          "move_path": true,
+          "find_path": true,
+          "fetch": true,
+          "delete_path": true,
+          "create_directory": true,
+          "copy_path": true,
+          "open": true,
+          "grep": true,
+          "save_file": true,
+          "edit_file": true,
+          "read_file": true,
+          "list_directory": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "default_profile": "write",
+    "default_model": {
+      "provider": "ollama",
+      "model": "gemma4:e2b_it_qat",
+      "enable_thinking": false,
+    },
+    "favorite_models": [
+      {
+        "provider": "ollama",
+        "model": "gemma4:e2b_it_qat",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5-mini",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.6",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gemini-3.1-pro-preview",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.6",
+        "enable_thinking": false
+      },
+      {
+        "provider": "openai",
+        "model": "gemma3:4b-it-qat",
+        "enable_thinking": false
+      },
+      {
+        "provider": "openai",
+        "model": "gemma4:26b",
+        "enable_thinking": false
+      },
+      {
+        "provider": "Mac_Mini_Local",
+        "model": "gemma4:26b",
+        "enable_thinking": false
+      },
+      {
+        "provider": "Mac_Mini_VPN",
+        "model": "gemma4:26b",
+        "enable_thinking": false
+      }
+    ],
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "dock": "right",
+    "sort_by_path": false,
+    "tree_view": false,
+  },
+  "icon_theme": "Base Charmed Icons",
+  "base_keymap": "Emacs",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Aura Dark",
+  },
+  "file_types": {
+    "Jupyter": ["ipynb"],
+  },
+  "jupyter": {
+    "enabled": true,
+  },
+  "lsp": {
+    "texlab": {
+      "initialization_options": {
+        "forwardSearch": {
+          "executable": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+          "args": ["%l", "%p", "%f"],
+        },
+      },
+    },
+  },
+}
