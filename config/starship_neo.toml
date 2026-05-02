@@ -1,0 +1,43 @@
+# --- Configuración Global ---
+add_newline = false
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$line_break\
+$character
+"""
+
+# --- Módulos ---
+
+[directory]
+style = "bold cyan"
+truncate_to_repo = true
+truncation_length = 3
+# El icono se define en el formato del módulo
+format = "󰉋 [$path]($style) " 
+read_only = " 󰌾"
+
+[git_branch]
+symbol = "󰊢 "
+style = "bold purple"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "([\\[$all_status$ahead_behind\\]]($style) )"
+
+[python]
+symbol = "󱔎 " 
+style = "bold yellow"
+# Detecta venv, conda y pyenv
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"

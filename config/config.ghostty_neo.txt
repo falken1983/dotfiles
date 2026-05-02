@@ -1,0 +1,3 @@
+# Fuente principal con soporte de iconos
+font-family = "JetBrainsMono Nerd Font"
+font-size = 16
